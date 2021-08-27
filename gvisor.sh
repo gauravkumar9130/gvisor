@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "please type username"
 read username
 useradd $username
