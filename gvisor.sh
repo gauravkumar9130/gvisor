@@ -1,14 +1,4 @@
 #!/bin/bash
-echo "please type username"
-read username
-useradd $username
-echo "please type $username passsword"
-read password
-echo $password | passwd --stdin $username
-cat >> /etc/sudoers <<EOF
-$username ALL=(ALL) NOPASSWD: ALL
-EOF
-su - $username 
 echo "Install libvirtd,kvm and minikube and  kubectl"
 sudo yum -y install epel-release
 sudo yum -y install libvirt qemu-kvm virt-install virt-top libguestfs-tools bridge-utils
